@@ -1,0 +1,28 @@
+import re
+a = input ("enterComment: ")
+text = a         #u''
+#th = u'[ก-๙]+'   #th = u'[\u0E01-\u0E2E]+' # หรือใช้โค้ด th = u'[ก-ฮ]+'
+en = u'[a-z,A-Z,  , \d ,-,*,.,~,),(,//,:,=,&,,+,?, \s,--,​]+'
+
+b = re.sub(en,"",text)
+#b = th
+
+#match = re.search(th,text,  re.U) # re.U เป็นคำสั่งใช้ Regular expression ใน unicode
+#print(match.group())
+print(b)
+
+
+import requests
+url = "https://api.aiforthai.in.th/ssense"
+ 
+text = a
+params = {'text':text}
+ 
+headers = {
+    'Apikey': "d33sBwGGDwjNkuQ88jJrf3tBsQWDkaoX"
+    }
+ 
+response = requests.get(url, headers=headers, params=params)
+ 
+print(response.json())
+
