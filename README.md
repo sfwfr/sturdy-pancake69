@@ -1,2 +1,2 @@
-# sturdy-pancake69
+# sturdy-pancake
 text extraction
